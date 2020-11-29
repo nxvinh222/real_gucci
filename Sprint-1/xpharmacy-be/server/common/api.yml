@@ -1,0 +1,541 @@
+swagger: "2.0"
+info:
+  version: 1.0.0
+  title: x-tutor
+  description: My cool app
+basePath: /api/v1
+tags:
+  - name: Examples
+    description: Simple example endpoints
+  - name: Specification
+    description: The swagger API specification
+
+consumes:
+  - application/json
+produces:
+  - application/json
+
+
+definitions:
+  ExampleBody:
+    type: object
+    title: example
+    required:
+      - name
+    properties:
+      name:
+        type: string
+        example: no_stress
+  UserBody:
+    type: object
+    title: Users
+    required:
+      - username
+      - password
+      - email
+      - name
+    properties:
+      username:
+        type: string
+        example: ho va ten
+      password:
+        type: string
+        example: "123"
+      age:
+        type: number
+        example: 3000
+      phone:
+        type: string
+        example: 0199285591
+      email:
+        type: string
+        example: pharmacy@gmail.com
+      name:
+        type: string
+        example: vinh nguyen
+      admin:
+        type: boolean
+        example: true
+      # cart:
+      #   type: array
+      #   example: [123, 456]
+  ProductBody:
+    type: object
+    title: Products
+    required:
+      - name
+      - price
+      - info
+      - image
+      - category
+    properties:
+      name:
+        type: string
+        example: Durex pleasure ring
+      price:
+        type: number
+        example: 69
+      info:
+        type: string
+        example: vong sung suong
+      image:
+        type: string
+        example: test
+      category:
+        type: string
+        example: skincare
+      sold:
+        type: number
+        example: 12000
+  OrderBody:
+    type: object
+    title: Sell products
+    required:
+      - products
+      - name
+      - phone
+      - address
+      - total
+    properties:
+      products:
+        type: array
+        example: ["123", "456"]
+      name:
+        type: string
+        example: Vinh Nguyen
+      username:
+        type: string
+        example: mindx
+      phone:
+        type: number
+        example: 0912345678
+      address:
+        type: string
+        example: 454 De La Thanh
+      date:
+        type: string
+        example: 12/7/2019
+      total:
+        type: number
+        example: 10000
+      status:
+        type: string
+        example: Delivering
+      
+
+
+paths:
+  # User
+  #*******************************
+  /users:
+    get:
+      tags:
+        - Users
+      description: Fetch All User
+      responses:
+        200:
+          description: Returns All Users
+    
+    post:
+      tags:
+        - Users
+      description: Signup user 
+      parameters:
+        - name: user
+          in: body
+          description: Signup user
+          required: true
+          schema: 
+            $ref: "#/definitions/UserBody"
+      responses:
+        200:
+          description: Signup success
+  /imageUploads:
+    post:
+      tags:
+        - Users
+      description: Get picture's link
+      parameters:
+        - name: file
+          in: formData
+          description: file to upload
+          required: false
+          type: file
+      responses:
+        201:
+          description: get picture link
+  /prescriptionUploads:
+    post:
+      tags:
+        - Users
+      description: Get picture's link
+      parameters:
+        - name: file
+          in: formData
+          description: file to upload
+          required: false
+          type: file
+      responses:
+        201:
+          description: get picture link
+        
+  /users/{id}:
+    get:
+      tags:
+        - Users
+      description: Get User's Info(only 1)
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The id of user
+          type: string
+      responses:
+        200:
+          description: Return User's Info
+        404:
+          description: User not found
+    put: 
+      tags:
+        - Users
+      description: Edit User's Info
+      parameters:
+        - name: user's info
+          in: body
+          description: an user
+          schema: 
+            type: object
+            title: users
+            properties:
+              username:
+                type: string
+                example: ho va ten
+              password:
+                type: string
+                example: "123"
+              age:
+                type: number
+                example: 3000
+              phone:
+                type: string
+                example: 0199285591
+              email:
+                type: string
+                example: pharmacy@gmail.com
+              name:
+                type: string
+                example: vinh nguyen
+              admin:
+                type: boolean
+        
+        - name: id
+          in: path
+          required: true
+          description: The id of user
+          type: string
+      responses:
+        200:
+          description: Return User's Info
+        404:
+          description: User not found
+   
+  # /signup:
+  #   post:
+  #     tags:
+  #       - Users
+  #     description: Signup user 
+  #     parameters:
+  #       - name: user
+  #         in: body
+  #         description: an user
+  #         required: true
+  #         schema: 
+  #           $ref: "#/definitions/UserBody"
+  #     response:
+  #       200:
+  #         description: Signup success
+  /auth:
+    get:
+      tags:
+        - Auth
+      description: get user's info
+      parameters:
+        - name: id
+          in: path
+          description: id of user
+          type: string
+      response:
+        200:
+          description: Return User's Info
+          
+    post:
+      tags:
+        - Auth
+      description: Login
+      parameters:
+        - name: user
+          in: body
+          description: an user
+          required: true
+          schema: 
+            type: object
+            title: users
+            required:
+              - username
+              - password
+            properties:
+              username:
+                type: string
+                example: ho va ten
+              password:
+                type: string
+                example: 123456
+      responses:
+        200:
+          description: Signup success
+  
+
+  /auth/verify:
+    get:
+      tags:
+        - Auth
+      description: get current user's info
+      responses:
+        200:
+          description: Get info success
+    post:
+      tags:
+        - Auth
+      description: get current user's info
+      parameter:
+        - name: token
+          in: body
+          description: user's token
+          required: true
+          schema: 
+            type: object
+            title: token
+            required:
+              - token
+            properties:
+              username:
+                type: string
+      responses:
+        200:
+          description: Get info success
+  # Product
+  #*******************************
+  /products:
+    get:
+      tags:
+        - Products
+      description: Find all products
+      responses:
+        200:
+          description: Return all Products
+    post:
+      tags:
+        - Products
+      description: Add more product
+      parameters:
+        - name: user
+          in: body
+          description: a product
+          required: true
+          schema: 
+            $ref: "#/definitions/ProductBody"
+        - name: file
+          in: formData
+          description: file to upload
+          required: false
+          type: file
+      responses:
+        200:
+          description: Return all Products
+  /products/{id}:
+    get:
+      tags: 
+        - Products
+      description: Get a product's info
+      parameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+          description: id of product
+      responses:
+        200: 
+          description: Return Product's info
+    delete:
+      tags:
+        - Products
+      description: Delete a product
+      parameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+      responses:
+        200:
+          description: Delete success
+        404:
+          description: Product not found
+      
+  # Cart
+  #*******************************
+  /cart:
+    get:
+      tags:
+        - Cart
+      description: View cart
+      responses:
+        200:
+          description: Return user's cart
+    post:
+      tags:
+        - Cart
+      description: add to cart
+      parameters:
+        - name: user
+          in: body
+          description: Add item to cart
+          required: true
+          schema: 
+            type: object
+            title: product
+            required:
+              - id
+            properties:
+              id: 
+                type: string
+                example: 123
+      responses:
+        200:
+          description: Add success
+  /cart/checkout:
+    post:
+      tags:
+        - cart
+      description: checkout
+      parameters:
+        - name: user
+          in: body
+          description: Checkout info
+          required: true
+          schema: 
+            type: object
+            title: product
+            required:
+              
+            properties:
+              id: 
+                type: string
+                example: 123  
+      responses:
+        200:
+          description: order complete
+
+# Order
+#*******************************
+  /orders:
+    get:
+      tags:
+        - Orders
+      description: Get all orders
+      responses:
+        200:
+          description: Returns all orders
+    post:
+      tags:
+        - Orders
+      description: Create a new order
+      parameters:
+        - name: user
+          in: body
+          description: create an order
+          required: false
+          schema: 
+            $ref: "#/definitions/OrderBody"
+      responses:
+        200:
+          description: Order success
+  /orders/{id}:
+    get:
+      tags: 
+        - Orders
+      description: Get an order
+      parameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+          description: id of user
+      responses:
+        200: 
+          description: Return an Order
+    delete:
+      tags:
+        - Orders
+      description: Delete an order
+      parameters:
+        - name: id
+          in: path
+          type: string
+          required: true
+          description: id of an order
+      responses:
+        200:
+          description: Delete success
+        404:
+          description: Order not found
+
+  /examples:
+    get:
+      tags:
+        - Examples
+      description: Fetch all examples
+      responses:
+        200:
+          description: Returns all examples
+    post:
+      tags:
+        - Examples
+      description: Create a new example
+      parameters:
+        - name: example
+          in: body
+          description: an example
+          required: true
+          schema: 
+            $ref: "#/definitions/ExampleBody"
+      responses:
+        200:
+          description: Returns all examples
+
+  /examples/{id}:
+    get:
+      tags:
+        - Examples
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: The id of the example to retrieve
+          type: integer
+        - name: q
+          in: query
+          description: for search
+          type: string
+      responses:
+        200:
+          description: Return the example with the specified id
+        404:
+          description: Example not found
+
+  /spec:
+    get:
+      tags:
+        - Specification
+      responses:
+        200:
+          description: Return the API specification
