@@ -18,27 +18,27 @@ class Feature extends Component {
                             <div className="row">
                                 <div className="col-md-1"></div>
                                 <div className="col-md-5 trai">
-                                    <h4 className="features-title">24/7</h4>
+                                    <h4 className="features-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 24/7</h4>
                                     <div className="duoi" style={{display: 'flex'}}>
                                         <div className="col-md-2" style={{display: 'flex', flexdirection: 'column'}}>
                                             <div style={{backgroundcolor: '#15cda8', width: '52px', height: '3px'}}></div>    
-                                            <div>24/7</div>
+                                            <div></div>
                                         </div>
                                         <div className="col-md-10">
-                                            <p> Silver is an eco-friendly antiseptic used by people from ancient times. State-of-the-art technologies make it possible to use this metal in the form of tiny little particles. They are able to make an antibacterial that effects 1000 times more than the same amount of a massive metal. EVOLUT products eradicate more than 650 bacteria
+                                            <p> Our website opens 24/7 h. You can shopping anytime you want. Moreover we accept many payment methods like Visa, Master Card, JCB. Search, Add, Checkout, Get then Be Happy.
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-md-5 phai">
-                                    <h4 className="features-title">FAST</h4>
+                                    <h4 className="features-title ">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DELIVERY FAST</h4>
                                     <div className="duoi" style={{display: 'flex'}}>
                                         <div className="col-md-2" style={{display: 'flex', flexdirection: 'column'}}>
                                             <div style={{backgroundcolor: '#15cda8', width: '52px', height: '3px'}}></div>    
-                                            <div>24/7</div>
+                                            <div></div>
                                         </div>
                                         <div className="col-md-10">
-                                            <p> Silver is an eco-friendly antiseptic used by people from ancient times. State-of-the-art technologies make it possible to use this metal in the form of tiny little particles. They are able to make an antibacterial that effects 1000 times more than the same amount of a massive metal. EVOLUT products eradicate more than 650 bacteria
+                                            <p> We operate Vietnam’s largest express parcel transportation network with fully integrated and self-owned pickup, mid-mile and delivery operations that successfully reach 50 households every second across Vietnam. Our in-house transport management platform enables our clients to schedule pickups, track orders in real-time, manage returns and replacements with ease. 
                                             </p>
                                         </div>
                                     </div>
@@ -47,27 +47,27 @@ class Feature extends Component {
                             <div className="row">
                                 <div className="col-md-1"></div>
                                 <div className="col-md-5 trai">
-                                    <h4 className="features-title">Friendly</h4>
+                                    <h4 className="features-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ENVIRONMENTALLY FRIENDLY</h4>
                                     <div className="duoi" style={{display: 'flex'}}>
                                         <div className="col-md-2" style={{display: 'flex', flexdirection: 'column'}}>
                                             <div style={{backgroundcolor: '#15cda8', width: '52px', height: '3px'}}></div>    
-                                            <div>24/7</div>
+                                            <div></div>
                                         </div>
                                         <div className="col-md-10">
-                                            <p> Silver is an eco-friendly antiseptic used by people from ancient times. State-of-the-art technologies make it possible to use this metal in the form of tiny little particles. They are able to make an antibacterial that effects 1000 times more than the same amount of a massive metal. EVOLUT products eradicate more than 650 bacteria
+                                            <p> We start with greener materials like organic wool and cotton, polyester from recycled plastic bottles, and cellulose from sustainably grown trees. We treat these fabrics with less-toxic dyes and processes. We aim to reduce the carbon footprint of their factories while making them safer for workers.
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="col-md-5 phai">
-                                    <h4 className="features-title">AFFORDABLE</h4>
+                                    <h4 className="features-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AFFORDABLE</h4>
                                     <div className="duoi" style={{display: 'flex'}}>
                                         <div className="col-md-2" style={{display: 'flex', flexdirection: 'column'}}>
                                             <div style={{backgroundcolor: '#15cda8', width: '52px', height: '3px'}}></div>    
-                                            <div>24/7</div>
+                                            <div></div>
                                         </div>
                                         <div className="col-md-10">
-                                            <p> Silver is an eco-friendly antiseptic used by people from ancient times. State-of-the-art technologies make it possible to use this metal in the form of tiny little particles. They are able to make an antibacterial that effects 1000 times more than the same amount of a massive metal. EVOLUT products eradicate more than 650 bacteria
+                                            <p> Love online shopping for new clothes, but hate looking at my bank account after, ya feel? We know you want a cute outfit, but, yeah, burning through a ton of money to get one can be stressful. We offer items that are just as trendy and stylish as luxe designs, but they don't make your wallet suffer thanks to the lower price tags.
                                             </p>
                                         </div>
                                     </div>

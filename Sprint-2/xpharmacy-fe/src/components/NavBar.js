@@ -52,7 +52,7 @@ class NavBar extends Component {
         return (
             <div className="container">
                 <Navbar bg="navbar-light" expand="lg" style={{padding: '30px'}}>
-                    <Navbar.Brand className="navbar-brand active" href="/" style={{color: '#15cda8', fontsize: '2.0rem'}}>xPharmacy.</Navbar.Brand>
+                    <Navbar.Brand className="navbar-brand active" href="/" style={{color: '#15cda8', fontsize: '2.0rem'}}>Saint Laurent.</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto mt-2 mt-lg-0">

@@ -52,7 +52,7 @@ class Footer extends Component {
 
                                 {/* <!-- Video --> */}
                                 <div className="embed-responsive embed-responsive-16by9 mb-4">
-                                <iframe className="embed-responsive-item" src="https://www.youtube.com/embed/D4Fi1YBbzDY"
+                                <iframe className="embed-responsive-item" src="https://www.youtube.com/embed/GJ_wLydHVik"
                                     allowfullscreen></iframe>
                                 </div>
 
@@ -66,7 +66,7 @@ class Footer extends Component {
                         {/* <!-- Footer Elements --> */}
 
                         {/* <!-- Copyright --> */}
-                        <div className="footer-copyright text-center py-3"> Made by Xuân Vinh & Đức Nam
+                        <div className="footer-copyright text-center py-3"> Made by team SP_10
                         </div>
                         {/* <!-- Copyright --> */}
 
