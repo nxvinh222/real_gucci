@@ -29,10 +29,10 @@ class DashBoard extends Component {
                             <Col sm={3}>
                             <Nav variant="pills" className="flex-column">
                                 <Nav.Item>
-                                <Nav.Link eventKey="first">Add Product</Nav.Link>
+                                <Nav.Link eventKey="first">Product Overview</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
-                                <Nav.Link eventKey="second">Delete Product</Nav.Link>
+                                <Nav.Link eventKey="second">Add Product</Nav.Link>
                                 </Nav.Item>
                                 <Nav.Item>
                                 <Nav.Link eventKey="third">Orders</Nav.Link>
@@ -42,10 +42,10 @@ class DashBoard extends Component {
                             <Col sm={9}>
                             <Tab.Content>
                                 <Tab.Pane eventKey="first">
-                                    <Add/>
+                                    <Delete onSearchChanged={this.props.onSearchChanged} searchString={this.props.state.searchString} products={this.props.state.products}/>
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="second"> 
-                                    <Delete onSearchChanged={this.props.onSearchChanged} searchString={this.props.state.searchString} products={this.props.state.products}/>
+                                    <Add/>
                                 </Tab.Pane>
                                 <Tab.Pane eventKey="third">
                                     <Order/>

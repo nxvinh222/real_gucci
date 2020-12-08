@@ -55,7 +55,10 @@ class product extends Component {
     _deleteProd = () => {
         axios
             .delete(`/api/v1/products/${this.props.product._id}`)
-            .then(alert("Delete success"))
+            .then(function(response){
+                alert("Item deleted")
+                window.location = "/dashboard"
+            })
             .catch(err => console.log(err));
     }
 
