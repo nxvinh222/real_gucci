@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ImageZoom from 'react-medium-image-zoom';
+import 'styles/DetailProduct.css'
 
 class DetailProduct extends Component {
     _addToCart = (event) => {
@@ -52,13 +53,17 @@ class DetailProduct extends Component {
                         }}
                     />
                 {/* <div className="col-1"></div> */}
-                <div className="col-lg-6 px-md-5">
-                    <h3>{this.props.product.name}</h3>
+                <div className="product-details col-lg-6 px-md-5">
+                    <h3 className="mb-3">{this.props.product.name}</h3>
                     <h2>{this.props.product.price}$</h2>
                     <p>{this.props.product.info}</p>
-                    <a href="#" 
-                        onClick={this._addToCart} className="btn btn-primary">ADD TO CART
-                    </a>
+                    <div className="mt-3">
+                        <a
+                            href="#" 
+                            onClick={this._addToCart} className="btn btn-primary">ADD TO CART
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>
