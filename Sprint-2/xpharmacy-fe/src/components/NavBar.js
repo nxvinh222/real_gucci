@@ -44,7 +44,7 @@ class NavBar extends Component {
             if (token == null)
                 SignUp = (<Nav.Link href="/signup">SignUp</Nav.Link>)
             if (token != null)
-                LogOut = (<Nav.Link href="/" onClick={this.SignOut}>LogOut</Nav.Link>)       
+                LogOut = (<Nav.Link className="navbar-item-logout" href="/" onClick={this.SignOut}>Logout</Nav.Link>)       
             if (this.state.admin == 1)
                 DashBoard = (<Nav.Link className="btn-primary" href="/dashboard">DashBoard</Nav.Link>)
             
@@ -57,13 +57,13 @@ class NavBar extends Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto mt-2 mt-lg-0">
-                        {DashBoard}
-                        <Nav.Link href="/products">Products</Nav.Link>
-                        <Nav.Link href="/order">Create Order</Nav.Link>
-                        {SignUp}
-                        {LogIn}
-                        <Nav.Link href="/cart">Cart</Nav.Link>
-                        {LogOut}
+                            {LogIn}
+                            {DashBoard}
+                            <Nav.Link className="navbar-item" href="/products">Products</Nav.Link>
+                            {/* <Nav.Link href="/order">Create Order</Nav.Link> */}
+                            {SignUp}
+                            <Nav.Link className="navbar-item" href="/cart">Cart</Nav.Link>
+                            {LogOut}
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>

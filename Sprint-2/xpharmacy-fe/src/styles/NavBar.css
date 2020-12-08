@@ -2,3 +2,13 @@
     border-radius: .25rem;
     color: white !important; 
 }
+
+.navbar-item:hover{
+    border-radius: .25rem;
+    color: white !important; 
+    background-color: #007bff;
+}
+
+.navbar-item-logout:hover{
+    color: #007bff !important; 
+}
