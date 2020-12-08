@@ -96,14 +96,12 @@ class product extends Component {
         }
         const hello = () => console.log(this.state.field);
         return (
-            <div className="col-sm-6 col-lg-4 mb-4  h-100" data-aos="fade-up">
-                <div className="card block-4 text-center border h-100">
+            <div className="col-sm-6 col-lg-4 mb-4 d-flex align-items-stretch" data-aos="fade-up">
+                <div className="card text-center h-100">
                     <a href={`/products/${this.props.product._id}`}>
-                        <figure className="block-4-image">
-                            <a href={`/products/${this.props.product._id}`}><img src={this.props.product.image} alt="Image placeholder" className="img-fluid"/></a>
-                        </figure>
-                        <div className="block-4-text p-4">
-                            <h5>{this.props.product.name}</h5>
+                        <img className="card-img-top img-fluid" src={this.props.product.image} alt="Image placeholder"/>
+                        <div className="card-body p-4">
+                            <h5 className="card-title">{this.props.product.name}</h5>
                             <p className="text-primary font-weight-bold">{this.props.product.price}$</p>
                             {func()}
                         </div>
