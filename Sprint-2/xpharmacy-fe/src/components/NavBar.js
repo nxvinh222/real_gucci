@@ -37,6 +37,7 @@ class NavBar extends Component {
             let SignUp
             let LogOut
             let DashBoard 
+            let Cart
             if (token == null)
                 LogIn = (<Nav.Link href="/login">Login</Nav.Link>)
             else
@@ -45,7 +46,9 @@ class NavBar extends Component {
                 SignUp = (<Nav.Link href="/signup">SignUp</Nav.Link>)
             if (token != null)
                 LogOut = (<Nav.Link className="navbar-item-logout" href="/" onClick={this.SignOut}>Logout</Nav.Link>)       
-            if (this.state.admin == 1)
+            if (token != null)
+                Cart = (<Nav.Link className="navbar-item" href="/cart">Cart</Nav.Link>)       
+                if (this.state.admin == 1)
                 DashBoard = (<Nav.Link className="btn-primary" href="/dashboard">DashBoard</Nav.Link>)
             
 
@@ -62,7 +65,7 @@ class NavBar extends Component {
                             <Nav.Link className="navbar-item" href="/products">Products</Nav.Link>
                             {/* <Nav.Link href="/order">Create Order</Nav.Link> */}
                             {/* {SignUp} */}
-                            <Nav.Link className="navbar-item" href="/cart">Cart</Nav.Link>
+                            {Cart}
                             {LogOut}
                         </Nav>
                     </Navbar.Collapse>
