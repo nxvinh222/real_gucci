@@ -1,6 +1,7 @@
 import React, { Component, useState } from 'react';
 import axios from '../axios';
 import { Modal, Button } from 'react-bootstrap';
+import 'styles/Product.css'
 
 class product extends Component {
     state = {
@@ -95,16 +96,18 @@ class product extends Component {
         }
         const hello = () => console.log(this.state.field);
         return (
-            <div className="col-sm-6 col-lg-4 mb-4" data-aos="fade-up">
-                <div className="block-4 text-center border">
-                    <figure className="block-4-image">
-                    <a href={`/products/${this.props.product._id}`}><img src={this.props.product.image} alt="Image placeholder" className="img-fluid"/></a>
-                    </figure>
-                    <div className="block-4-text p-4">
-                        <h3><a href={`/products/${this.props.product._id}`}>{this.props.product.name}</a></h3>
-                        <p className="text-primary font-weight-bold">{this.props.product.price}$</p>
-                        {func()}
-                    </div>
+            <div className="col-sm-6 col-lg-4 mb-4  h-100" data-aos="fade-up">
+                <div className="card block-4 text-center border h-100">
+                    <a href={`/products/${this.props.product._id}`}>
+                        <figure className="block-4-image">
+                            <a href={`/products/${this.props.product._id}`}><img src={this.props.product.image} alt="Image placeholder" className="img-fluid"/></a>
+                        </figure>
+                        <div className="block-4-text p-4">
+                            <h5>{this.props.product.name}</h5>
+                            <p className="text-primary font-weight-bold">{this.props.product.price}$</p>
+                            {func()}
+                        </div>
+                    </a>
                 </div>
             </div>
         );
