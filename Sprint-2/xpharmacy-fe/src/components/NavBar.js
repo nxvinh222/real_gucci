@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 import axios from '../axios';
+import 'styles/NavBar.css'
 
 class NavBar extends Component {
     state = {
@@ -45,14 +46,14 @@ class NavBar extends Component {
             if (token != null)
                 LogOut = (<Nav.Link href="/" onClick={this.SignOut}>LogOut</Nav.Link>)       
             if (this.state.admin == 1)
-                DashBoard = (<Nav.Link href="/dashboard">DashBoard</Nav.Link>)
+                DashBoard = (<Nav.Link className="btn-primary" href="/dashboard">DashBoard</Nav.Link>)
             
 
 
         return (
             <div className="container">
                 <Navbar bg="navbar-light" expand="lg" style={{padding: '30px'}}>
-                    <Navbar.Brand className="navbar-brand active" href="/" style={{color: '#15cda8', fontsize: '2.0rem'}}>Saint Laurent.</Navbar.Brand>
+                    <Navbar.Brand className="navbar-brand active" href="/" style={{color: '#007bff', fontsize: '2.0rem'}}>Saint Laurent.</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ml-auto mt-2 mt-lg-0">
