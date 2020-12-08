@@ -61,7 +61,7 @@ class NavBar extends Component {
                             {DashBoard}
                             <Nav.Link className="navbar-item" href="/products">Products</Nav.Link>
                             {/* <Nav.Link href="/order">Create Order</Nav.Link> */}
-                            {SignUp}
+                            {/* {SignUp} */}
                             <Nav.Link className="navbar-item" href="/cart">Cart</Nav.Link>
                             {LogOut}
                         </Nav>

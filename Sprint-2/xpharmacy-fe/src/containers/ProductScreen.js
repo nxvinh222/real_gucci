@@ -17,6 +17,11 @@ class ProductScreen extends Component {
         }, () => console.log(this.state.category));
     }
 
+    componentDidMount(){
+        if (localStorage.getItem('token')==null)
+            window.location = '/login'       
+    }
+
     render() {
         return (
             <div>
