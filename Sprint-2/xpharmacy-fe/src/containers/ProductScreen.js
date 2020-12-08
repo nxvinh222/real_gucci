@@ -26,9 +26,9 @@ class ProductScreen extends Component {
                         <div className="row mb-5">
                             <div className="col-md-9 order-2">
                                 <div className="row">
-                                    <div className="col-md-12 mb-5">
-                                        <div className="float-md-left mb-4"><h2 className="text-black h5">Shop All</h2></div>
-                                        <div className="d-flex">
+                                    <div className="col-md-12 mb-5">  
+                                        <div className="float-md-left mb-4"><h2 className="text-black h5">{this.state.category}</h2></div>
+                                        {/* <div className="d-flex">
                                             <div className="mr-1 ml-md-auto">
                                                 <DropdownButton id="dropdown-basic-button" title="Reference">
                                                     <Dropdown.Item href="#/action-1">Relevance</Dropdown.Item>
@@ -39,11 +39,11 @@ class ProductScreen extends Component {
                                                     <Dropdown.Item href="#/action-3" onSelect={this.sortByPriceDesc}>Price, high to low</Dropdown.Item>
                                                 </DropdownButton>
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                 </div>
                                 <ProductField category={this.state.category} products={this.props.state.products}/>
-                                <div className="row" data-aos="fade-up">
+                                {/* <div className="row" data-aos="fade-up">
                                     <div className="col-md-12 text-center">
                                         <div className="pagination" style={{display: 'block'}}>
                                           <a href="#">&laquo;</a>
@@ -56,7 +56,7 @@ class ProductScreen extends Component {
                                           <a href="#">&raquo;</a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                     
                             <div className="col-md-3 order-1 mb-5 mb-md-0">
