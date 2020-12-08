@@ -55,8 +55,8 @@ class DashBoard extends Component {
                         </Row>
                     </Tab.Container>              
         ) : (
-            <div>
-                Hello
+            <div className="lead">
+                Loading...
             </div>
         )
         return (         
