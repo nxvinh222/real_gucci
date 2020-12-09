@@ -42,24 +42,24 @@ class Order extends Component {
 
     renderItem(item) {
         const clickCallback = () => this.handleRowClick(item._id);
-        // const productRows = item.products.map(product => (
-        //     <>
-        //         <div className="row" >
-        //             <div className="col-md-2 mb-2">
-        //                 <img src={product.image} alt="Image placeholder" className="img-fluid"/>
-        //             </div>
-        //             <div className="col-md-2">
-        //                 {product.name}
-        //             </div>
-        //             <div className="col-md-2">
-        //                 {product.price}
-        //             </div>
-        //         </div>
-        //     </>
-        // ))
+        const productRows = item.products.map(product => (
+            <>
+                <div className="row" >
+                    {/* <div className="col-md-2 mb-2">
+                        <img src={product.image} alt="Image placeholder" className="img-fluid"/>
+                    </div> */}
+                    <div className="col-md-2">
+                        {product.name}
+                    </div>
+                    <div className="col-md-2">
+                        {product.price}
+                    </div>
+                </div>
+            </>
+        ))
         const itemRows = [
 			<tr onClick={clickCallback} key={"row-data-" + item._id}>
-			    <td>{item._id}</td>
+			    {/* <td>{item._id}</td> */}
                 <td>{item.name}</td>
 			    <td>{item.status}</td>
                 <td>{item.date}</td>
@@ -74,13 +74,17 @@ class Order extends Component {
         ];
         
         if(this.state.expandedRows.includes(item._id)) {
+
             itemRows.push(
-                <tr key={"row-expanded-" + item._id}>
-                    <td>Image</td>
-                    <td>Product's Name</td>
-                    <td>Price</td>
-                </tr>
-                // <productRows/>
+
+                    <div key={"row-expanded-" + item._id}>
+                        {/* <td>Image</td> */}
+                        <tr className="">{item.products[0].name}, Item price: {item.products[0].price} </tr>
+                        <tr className="">{item.products[0].name}, Item price: {item.products[0].price} </tr>
+                        <p></p>
+                    </div>
+
+
             );
         }
         
@@ -99,7 +103,7 @@ class Order extends Component {
                 <Table bordered>
                     <thead>
                     <tr>
-                        <th>ID</th>
+                        {/* <th>ID</th> */}
                         <th>Customer</th>
                         <th>Status</th>
                         <th>Date</th>
