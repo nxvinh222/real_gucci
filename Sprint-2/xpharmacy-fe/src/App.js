@@ -10,7 +10,8 @@ import ProductScreen from './containers/ProductScreen';
 import axios from './axios';
 import DashBoard from './containers/DashBoard';
 import Cart from './containers/Cart';
-import Prescription from './containers/Prescription';
+import Order from './containers/Prescription';
+import OrderDetail from './containers/OrderDetail';
 import SignUpScreen from './containers/SignUpScreen';
 import DetailProduct from './containers/DetailScreen';
 
@@ -79,7 +80,10 @@ class App extends Component {
             return <Cart {...props} state={this.state}/>
           }} />
           <Route exact path="/order" render={(props) => {
-            return <Prescription {...props} state={this.state}/>
+            return <Order {...props} state={this.state}/>
+          }} />
+           <Route exact path="/order/:orderId" render={(props) => {
+            return <OrderDetail {...props} state={this.state}/>
           }} />
         </div>
       </BrowserRouter>
