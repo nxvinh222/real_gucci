@@ -57,7 +57,26 @@ class Order extends Component {
                 </div>
             </>
         ))
-        const itemRows = [
+
+
+
+        const originalItemRows = [
+			<tr onClick={clickCallback} key={"row-data-" + item._id}>
+			    {/* <td>{item._id}</td> */}
+                <td>{item.name}</td>
+			    <td>{item.status}</td>
+                <td>{item.date}</td>
+                <td>{item.total}</td>
+                <td>
+                    <Dropdown>
+                    <Dropdown.Toggle variant="secondary" id="dropdown-basic">
+                    </Dropdown.Toggle>
+                    </Dropdown>
+                </td>
+			</tr>
+        ];
+
+        let itemRows = [
 			<tr onClick={clickCallback} key={"row-data-" + item._id}>
 			    {/* <td>{item._id}</td> */}
                 <td>{item.name}</td>
@@ -74,18 +93,20 @@ class Order extends Component {
         ];
         
         if(this.state.expandedRows.includes(item._id)) {
+            // itemRows = originalItemRows
 
-            itemRows.push(
+            item.products.forEach(product => {
+                itemRows.push(
 
-                    <div key={"row-expanded-" + item._id}>
+                    <tr key={"row-expanded-" + item._id}>
                         {/* <td>Image</td> */}
-                        <tr className="">{item.products[0].name}, Item price: {item.products[0].price} </tr>
-                        <tr className="">{item.products[0].name}, Item price: {item.products[0].price} </tr>
-                        <p></p>
-                    </div>
-
-
+                        <td className="">Item name: {product.name} <br/>Item price: {product.price} </td>
+                        {/* <td className="">Item price: {product.price} </td> */}
+                    </tr>
             );
+
+            })
+
         }
         
         return itemRows;    
