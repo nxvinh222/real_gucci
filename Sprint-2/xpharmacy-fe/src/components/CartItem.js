@@ -36,7 +36,16 @@ class CartItem extends Component {
         window.location.href='/cart'
     }
 
+
+
     render() {
+        let deleteButton
+        if (this.props.order != true) 
+            deleteButton = (<form onClick={this.Delete} className="FormFields">
+                                <a href="#" className="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Delete</a>
+                            </form>
+            )
+
         return (
             <div className="row" >
                 <div className="col-md-2 mb-2">
@@ -49,11 +58,12 @@ class CartItem extends Component {
                     <input className="w-25" type="number" value={this.props.quantity}></input> x {this.state.price}
                 </div>
                 <div className="col-md-2">
-                    Total = {this.state.price * this.props.quantity}
+                    {this.state.price * this.props.quantity}$
                 </div>
-                <form onClick={this.Delete} className="FormFields">
+                {/* <form onClick={this.Delete} className="FormFields">
                     <a href="#" className="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Delete</a>
-                </form>
+                </form> */}
+                {deleteButton}
                 
             </div>
             
