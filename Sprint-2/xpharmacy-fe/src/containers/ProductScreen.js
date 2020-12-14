@@ -19,7 +19,8 @@ class ProductScreen extends Component {
 
     componentDidMount(){
         if (localStorage.getItem('token')==null)
-            window.location = '/login'       
+            window.location = '/login'      
+        // this.props.onSearchChanged("test"); 
     }
 
     render() {
@@ -47,7 +48,7 @@ class ProductScreen extends Component {
                                         </div> */}
                                     </div>
                                 </div>
-                                <ProductField category={this.state.category} products={this.props.state.products}/>
+                                <ProductField onSearchChanged={this.props.onSearchChanged} searchString={this.props.state.searchString} category={this.state.category} products={this.props.state.products}/>
                                 {/* <div className="row" data-aos="fade-up">
                                     <div className="col-md-12 text-center">
                                         <div className="pagination" style={{display: 'block'}}>
