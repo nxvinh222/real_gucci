@@ -49,20 +49,7 @@ class ProductScreen extends Component {
                                     </div>
                                 </div>
                                 <ProductField onSearchChanged={this.props.onSearchChanged} searchString={this.props.state.searchString} category={this.state.category} products={this.props.state.products}/>
-                                {/* <div className="row" data-aos="fade-up">
-                                    <div className="col-md-12 text-center">
-                                        <div className="pagination" style={{display: 'block'}}>
-                                          <a href="#">&laquo;</a>
-                                          <a href="#">1</a>
-                                          <a href="#">2</a>
-                                          <a href="#">3</a>
-                                          <a href="#">4</a>
-                                          <a href="#">5</a>
-                                          <a href="#">6</a>
-                                          <a href="#">&raquo;</a>
-                                        </div>
-                                    </div>
-                                </div> */}
+
                             </div>
                     
                             <div className="col-md-3 order-1 mb-5 mb-md-0">
