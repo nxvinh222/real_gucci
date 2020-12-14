@@ -14,7 +14,7 @@ class Delete extends Component {
                 <h2>Product Overview</h2>
                 <SearchField onSearchChanged={this.props.onSearchChanged}/>
                 <div className="row mb-5">
-                {displayedProducts}
+                    {displayedProducts}
                 </div>
             </div>
         );

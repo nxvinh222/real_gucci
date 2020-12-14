@@ -59,7 +59,7 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <Route exact path="/" render={(props) => {
-            return <HomeScreen {...props} state={this.state} _onSearchChanged={this._onSearchChanged}/>
+            return <HomeScreen {...props} state={this.state} onSearchChanged={this._onSearchChanged}/>
           }} />
           <Route exact path="/login" render={(props) => {
             return <LoginScreen {...props} state={this.state} _onLogin={this._onLogin}/>
@@ -68,7 +68,7 @@ class App extends Component {
             return <SignUpScreen {...props} state={this.state} _onLogin={this._onLogin}/>
           }} />
           <Route exact path="/products" render={(props) => {
-            return <ProductScreen {...props} state={this.state}/>
+            return <ProductScreen {...props} state={this.state} onSearchChanged={this._onSearchChanged}/>
           }} />
           <Route exact path="/products/:productId" render={(props) => {
             return <DetailProduct {...props} state={this.state}/>
