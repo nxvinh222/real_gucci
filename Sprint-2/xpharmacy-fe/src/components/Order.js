@@ -68,32 +68,10 @@ class Order extends Component {
 			    <td>{item.status}</td>
                 <td>{item.date}</td>
                 <td>{item.total}$</td>
-                {/* <td>
-                    <Dropdown>
-                    <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-                    </Dropdown.Toggle>
-                    </Dropdown>
-                </td> */}
-
 			</tr>
         ];
         
-        // if(this.state.expandedRows.includes(item._id)) {
-        //     // itemRows = originalItemRows
 
-        //     item.products.forEach(product => {
-        //         itemRows.push(
-
-        //             <tr key={"row-expanded-" + item._id}>
-        //                 {/* <td>Image</td> */}
-        //                 <td className="">Item name: {product.name} <br/>Item price: {product.price} </td>
-        //                 {/* <td className="">Item price: {product.price} </td> */}
-        //             </tr>
-        //     );
-
-        //     })
-
-        // }
         
         return itemRows;    
     }

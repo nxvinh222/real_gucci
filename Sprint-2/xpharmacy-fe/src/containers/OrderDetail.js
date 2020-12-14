@@ -22,9 +22,15 @@ class Cart extends Component {
         .then( data => {
             this.setState({
                 total: data.data.total,
-                products: data.data.products
+                products: data.data.products,
+                name: data.data.name,
+                phone: data.data.phone,
+                address: data.data.address,
+                date: data.data.date,
+                status: data.data.status
             })
             console.log(this.state.products);
+            console.log(data.data)
         })
         .catch (err => console.log(err));
     }
@@ -45,7 +51,14 @@ class Cart extends Component {
                     {allItems}
                     Total = {this.state.total}$
                     <hr/>
-                    
+                </div>
+                <div className="container text-left">
+                    <p className="lead">Customer name: {this.state.name}</p>
+                    <p className="lead">Address: {this.state.address}</p>
+                    <p className="lead">Phone number: {this.state.phone}</p>
+                    <p className="lead">Note: {this.state.note}</p>
+                    <p className="lead">Order date: {this.state.date}</p>
+                    <p className="lead">Status: {this.state.status}</p>
                 </div>
                 <Footer/>
             </div>
