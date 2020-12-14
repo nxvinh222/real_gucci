@@ -16,7 +16,7 @@ class MainScreen extends Component {
                 <Banner bannerText="Hello World"/>
                 {/* <Carousel/> */}
                 <Feature/>
-                <ProductField products={this.props.state.products}/>
+                {/* <ProductField products={this.props.state.products}/> */}
                 <Footer/>
             </div>
         );
