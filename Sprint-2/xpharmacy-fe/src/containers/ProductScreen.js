@@ -18,9 +18,8 @@ class ProductScreen extends Component {
     }
 
     componentDidMount(){
-        if (localStorage.getItem('token')==null)
-            window.location = '/login'      
-        // this.props.onSearchChanged("test"); 
+        // if (localStorage.getItem('token')==null)
+        //     window.location = '/login'      
     }
 
     render() {
